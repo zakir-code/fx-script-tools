@@ -38,6 +38,4 @@ function validator_status() {
   done < <(echo "$validators" | jq -r '.[]|"\(.operator_address) \(.description.moniker)"')
 }
 
-if [ "$0" == "./query.sh" ]; then
-  "$@" || echo "exec $0 invalid params:" "$@" && exit 1
-fi
+"$@" || echo "exec $0 invalid params:" "$@" && exit 1
